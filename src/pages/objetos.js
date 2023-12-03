@@ -31,11 +31,16 @@ function Users({ users }) {
 
 export const getStaticProps = (async (context) => {
     const res = await fetch('https://www.bocaweb.com.br/apibocaweb?nome=anime')
-    const repo = await res.json()
-    const users = await repo;
-    return {
-        props: { users }
+    try {
+        const repo = await res.json()
+        const users = await repo;
+        return {
+            props: { users }
+        }
+    }catch (error) {
+        console.log("Erro no fetch", error)
     }
+    
 })
 
 export default Users;

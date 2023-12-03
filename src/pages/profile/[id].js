@@ -20,24 +20,32 @@ function Profile({ user = {} }) {
 
 export const getStaticProps = (async (context) => {
     const res = await fetch('https://www.bocaweb.com.br/apibocaweb?nome=anime')
-    const repo = await res.json()
-    const user = await repo[context.params.id];
-    return {
-        props: { user }
+    try {
+        const repo = await res.json()
+        const user = await repo[context.params.id];
+        return {
+            props: { user }
+        }
+    } catch (error) {
+        console.log("erro 1", error)
     }
 })
 
 export async function getStaticPaths() {
     const res = await fetch('https://www.bocaweb.com.br/apibocaweb?nome=anime')
-    const repo = await res.json()
-    const users = await repo;
-    const paths = users.map((user, index) => {
-        return { params: { id: String(index) } };
-    });
-    return {
-        paths,
-        fallback: false,
-    };
+    try {
+        const repo = await res.json()
+        const users = await repo;
+        const paths = users.map((user, index) => {
+            return { params: { id: String(index) } };
+        });
+        return {
+            paths,
+            fallback: false,
+        };
+    } catch (error) {
+        console.log("erro", error)
+    }
 }
 
 export default Profile;
