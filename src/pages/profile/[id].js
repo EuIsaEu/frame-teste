@@ -1,17 +1,25 @@
-import styles from '../../styles/Home.module.css';
+import styles from '../../styles/Descricao.module.css';
+import Header from '../Components/Header.js';
 
 function Profile({ user = {} }) {
     return (
-        <div>
-            <p>{user.id}</p>
-            <p>{user.name}</p>
-            <p>{user.username}</p>
-        </div>
+        <>
+            <Header></Header>
+            <title>{user.nome}</title>
+            <div className={styles.descricao}>
+                <div>
+                    <p id={styles.nome}>{user.nome}</p>
+                    <p id={styles.usuario}>{user.usuario}</p>
+                    <p id={styles.descricao}>{user.descricao}</p>
+                    <a href='/objetos'>Voltar aos objetos</a>
+                </div>
+            </div>
+        </>
     )
 }
 
 export const getStaticProps = (async (context) => {
-    const res = await fetch('https://jsonplaceholder.typicode.com/users')
+    const res = await fetch('https://www.bocaweb.com.br/apibocaweb?nome=anime')
     const repo = await res.json()
     const user = await repo[context.params.id];
     return {
@@ -20,7 +28,7 @@ export const getStaticProps = (async (context) => {
 })
 
 export async function getStaticPaths() {
-    const res = await fetch('https://jsonplaceholder.typicode.com/users')
+    const res = await fetch('https://www.bocaweb.com.br/apibocaweb?nome=anime')
     const repo = await res.json()
     const users = await repo;
     const paths = users.map((user, index) => {

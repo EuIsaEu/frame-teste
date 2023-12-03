@@ -1,0 +1,159 @@
+.home {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#banner {
+    width: 92%;
+    min-height: 45vw;
+    display: flex;
+    align-items: center;
+    padding: 0 4%;
+}
+
+#banner h1 {
+    font-size: 5vw;
+    color: #7556E3;
+    animation: leftIn 2s;
+}
+
+#banner p {
+    font-size: 2vw;
+    animation: leftIn 2s;
+}
+
+#divImg {
+    width: 30%;
+    position: relative;
+}
+
+#tako {
+    width: 25vw;
+    animation: takoIn 2s;
+}
+
+#irObjetos {
+    width: 92%;
+    min-height: 30vw;
+    display: flex;
+    align-items: center;
+    animation: downIn 3s;
+}
+
+#inaHappy {
+    width: 27vw;
+    margin-right: 1vw;
+}
+
+#irObjetosTexto h2 {
+    font-size: 3vw;
+    margin-bottom: 2vw;
+    color: #7556E3;
+}
+
+#irObjetosTexto p {
+    font-size: 1.5vw;
+}
+
+#irObjetosTexto b {
+    color: #6a53bb;
+}
+
+#linkObj {
+    font-size: 1.5vw;
+    margin-top: 1vw;
+    color: #6a53bb;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+
+@media (max-width:720px) {
+    #banner {
+        min-height: 50vw;
+        margin-bottom: 5vw;
+    }
+
+    #banner h1 {
+        font-size: 7vw;
+        margin-bottom: 1vw;
+        color: #7556E3;
+    }
+
+    #banner p {
+        font-size: 2.8vw;
+        animation: leftIn 2s;
+    }
+
+    #divImg {
+        width: 50%;
+        position: relative;
+    }
+
+    #tako {
+        width: 37vw;
+    }
+
+    #irObjetos {
+        min-height: 35vw;
+
+    }
+
+    #inaHappy {
+        width: 45vw;
+        margin-right: 1vw;
+    }
+
+    #irObjetosTexto h2 {
+        font-size: 4vw;
+    }
+
+    #irObjetosTexto p {
+        font-size: 2.5vw;
+    }
+
+    #irObjetosTexto b {
+        color: #6a53bb;
+    }
+
+    #linkObj {
+        font-size: 2.5vw;
+    }
+}
+
+@keyframes takoIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-30%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes leftIn {
+    0% {
+        opacity: 0;
+        transform: translateX(30%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes downIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}

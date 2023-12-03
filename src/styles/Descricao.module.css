@@ -1,0 +1,55 @@
+.descricao {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.descricao a {
+    font-size: 2vw;
+    text-decoration: underline;
+}
+
+#nome {
+    font-size: 3vw;
+    font-weight: 700;
+}
+
+#usuario {
+    font-size: 2vw;
+    font-weight: 200;
+    margin-bottom: 2vw;
+}
+
+#descricao {
+    font-size: 1.5vw;
+    margin-bottom: 3vw;
+}
+
+@media (max-width:720px) {
+    .descricao {
+        width: 85vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .descricao a {
+        font-size: 3vw;
+        text-decoration: underline;
+    }
+
+    #nome {
+        font-size: 5vw;
+        font-weight: 700;
+    }
+
+    #usuario {
+        font-size: 4vw;
+        font-weight: 200;
+        margin-bottom: 2vw;
+    }
+
+    #descricao {
+        font-size: 3vw;
+        margin-bottom: 3vw;
+    }
+}
